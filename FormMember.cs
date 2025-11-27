@@ -160,8 +160,11 @@ namespace pj
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string keyword = txtSearch.Text;
-            var result = AppData.MemberManager.SearchMembers(keyword);
-            LoadMemberList(result);
+            if (keyword == "") { MessageBox.Show ("กรุณาใส่ชื่อในคำค้นหา"); }
+            else {
+                var result = AppData.MemberManager.SearchMembers(keyword);
+                LoadMemberList(result);
+            }
         }
 
         private void dgvMembers_CellContentClick(object sender, DataGridViewCellEventArgs e)

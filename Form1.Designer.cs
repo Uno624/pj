@@ -40,7 +40,6 @@
             btb_Borrowe = new Button();
             lstBooks = new ListBox();
             btb_Addbook = new Button();
-            txtNewTitle = new TextBox();
             btb_MemberManager = new Button();
             SuspendLayout();
             // 
@@ -72,6 +71,7 @@
             lstBooks.Name = "lstBooks";
             lstBooks.Size = new Size(776, 94);
             lstBooks.TabIndex = 2;
+            lstBooks.SelectedIndexChanged += lstBooks_SelectedIndexChanged;
             // 
             // btb_Addbook
             // 
@@ -82,13 +82,6 @@
             btb_Addbook.Text = "เพิ่มหนังสือ";
             btb_Addbook.UseVisualStyleBackColor = true;
             btb_Addbook.Click += btb_Addbook_Click;
-            // 
-            // txtNewTitle
-            // 
-            txtNewTitle.Location = new Point(12, 121);
-            txtNewTitle.Name = "txtNewTitle";
-            txtNewTitle.Size = new Size(377, 23);
-            txtNewTitle.TabIndex = 4;
             // 
             // btb_MemberManager
             // 
@@ -106,7 +99,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btb_MemberManager);
-            Controls.Add(txtNewTitle);
             Controls.Add(btb_Addbook);
             Controls.Add(lstBooks);
             Controls.Add(btb_Borrowe);
@@ -115,7 +107,6 @@
             Text = "Form1";
             Load += Form1_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -124,7 +115,6 @@
         private Button btb_Borrowe;
         private ListBox lstBooks;
         private Button btb_Addbook;
-        private TextBox txtNewTitle;
         private Button btb_MemberManager;
     }
 

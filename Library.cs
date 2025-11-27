@@ -10,18 +10,29 @@ namespace pj
 {
     public class Library
     {
+        /// <summary>
+        /// ชื่อไฟล์ที่ใช้เก็บข้อมูลสมาชิกในรูปแบบ JSON
+        /// </summary>
         private const string DataFile = "library.json";
 
+        /// รายการสมาชิกทั้งหมดที่อยู่ในระบบ
         public List<Book> Books { get; set; } = new List<Book>();
 
+        /// <summary>
+        /// โหลดรสมาชิกทั้งหมดท่อยู่ในไฟล์
+        /// </summary>
         public void Load()
         {
+            /// ถ้าไฟล์ยังไม่ถูกสร้าง ให้ใช้ List ว่าง
+
             if (!File.Exists(DataFile))
             {
+             
                 Books = new List<Book>();
                 return;
             }
 
+            ///อ่านไฟล์ json
             string json = File.ReadAllText(DataFile);
             var books = JsonSerializer.Deserialize<List<Book>>(json);
             if (books != null)
@@ -30,6 +41,9 @@ namespace pj
             }
         }
 
+        /// <summary>
+        /// บันทึกข้อมูล Members ลงไฟล์ JSON
+        /// </summary>
         public void Save()
         {
             var options = new JsonSerializerOptions

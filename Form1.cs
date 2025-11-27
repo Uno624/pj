@@ -56,15 +56,10 @@
 
         private void btb_Addbook_Click(object sender, EventArgs e)
         {
-            string title = txtNewTitle.Text.Trim();
-            if (string.IsNullOrWhiteSpace(title))
+            using (var f = new FormAddbook())   // ฟอร์มยืม
             {
-                MessageBox.Show("กรุณาใส่ชื่อหนังสือ");
-                return;
+                f.ShowDialog();
             }
-
-            AppData.Library.AddBook(title);
-            txtNewTitle.Clear();
             RefreshBookList();
         }
 
@@ -74,6 +69,11 @@
             {
                 f.ShowDialog();
             }
+        }
+
+        private void lstBooks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
