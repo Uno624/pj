@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             dgvMembers = new DataGridView();
+            colId = new DataGridViewTextBoxColumn();
+            colName = new DataGridViewTextBoxColumn();
+            colGmail = new DataGridViewTextBoxColumn();
+            colPhone = new DataGridViewTextBoxColumn();
+            colAddress = new DataGridViewTextBoxColumn();
+            colRegisterDate = new DataGridViewTextBoxColumn();
+            colIsActive = new DataGridViewTextBoxColumn();
             txtMemberName = new TextBox();
             txtMemberGmail = new TextBox();
             txtMemberPhone = new TextBox();
@@ -48,13 +55,6 @@
             btnDelete = new Button();
             btnSearch = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            colId = new DataGridViewTextBoxColumn();
-            colName = new DataGridViewTextBoxColumn();
-            colGmail = new DataGridViewTextBoxColumn();
-            colPhone = new DataGridViewTextBoxColumn();
-            colAddress = new DataGridViewTextBoxColumn();
-            colRegisterDate = new DataGridViewTextBoxColumn();
-            colIsActive = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvMembers).BeginInit();
             SuspendLayout();
             // 
@@ -71,6 +71,48 @@
             dgvMembers.Size = new Size(776, 150);
             dgvMembers.TabIndex = 0;
             dgvMembers.CellContentClick += dgvMembers_CellContentClick;
+            // 
+            // colId
+            // 
+            colId.HeaderText = "ID";
+            colId.Name = "colId";
+            colId.ReadOnly = true;
+            // 
+            // colName
+            // 
+            colName.HeaderText = "Name";
+            colName.Name = "colName";
+            colName.ReadOnly = true;
+            // 
+            // colGmail
+            // 
+            colGmail.HeaderText = "Gmail";
+            colGmail.Name = "colGmail";
+            colGmail.ReadOnly = true;
+            // 
+            // colPhone
+            // 
+            colPhone.HeaderText = "Numer";
+            colPhone.Name = "colPhone";
+            colPhone.ReadOnly = true;
+            // 
+            // colAddress
+            // 
+            colAddress.HeaderText = "Address";
+            colAddress.Name = "colAddress";
+            colAddress.ReadOnly = true;
+            // 
+            // colRegisterDate
+            // 
+            colRegisterDate.HeaderText = "RegisterDate";
+            colRegisterDate.Name = "colRegisterDate";
+            colRegisterDate.ReadOnly = true;
+            // 
+            // colIsActive
+            // 
+            colIsActive.HeaderText = "สถานะ";
+            colIsActive.Name = "colIsActive";
+            colIsActive.ReadOnly = true;
             // 
             // txtMemberName
             // 
@@ -173,9 +215,9 @@
             chkIsActive1.AutoSize = true;
             chkIsActive1.Location = new Point(12, 369);
             chkIsActive1.Name = "chkIsActive1";
-            chkIsActive1.Size = new Size(86, 19);
+            chkIsActive1.Size = new Size(59, 19);
             chkIsActive1.TabIndex = 14;
-            chkIsActive1.Text = "chkIsActive";
+            chkIsActive1.Text = "Active";
             chkIsActive1.UseVisualStyleBackColor = true;
             // 
             // btnAddMember
@@ -227,48 +269,6 @@
             btnSearch.Text = "ค้นหา";
             btnSearch.UseVisualStyleBackColor = true;
             btnSearch.Click += btnSearch_Click;
-            // 
-            // colId
-            // 
-            colId.HeaderText = "ID";
-            colId.Name = "colId";
-            colId.ReadOnly = true;
-            // 
-            // colName
-            // 
-            colName.HeaderText = "Name";
-            colName.Name = "colName";
-            colName.ReadOnly = true;
-            // 
-            // colGmail
-            // 
-            colGmail.HeaderText = "Gmail";
-            colGmail.Name = "colGmail";
-            colGmail.ReadOnly = true;
-            // 
-            // colPhone
-            // 
-            colPhone.HeaderText = "Numer";
-            colPhone.Name = "colPhone";
-            colPhone.ReadOnly = true;
-            // 
-            // colAddress
-            // 
-            colAddress.HeaderText = "Address";
-            colAddress.Name = "colAddress";
-            colAddress.ReadOnly = true;
-            // 
-            // colRegisterDate
-            // 
-            colRegisterDate.HeaderText = "RegisterDate";
-            colRegisterDate.Name = "colRegisterDate";
-            colRegisterDate.ReadOnly = true;
-            // 
-            // colIsActive
-            // 
-            colIsActive.HeaderText = "สถานะ";
-            colIsActive.Name = "colIsActive";
-            colIsActive.ReadOnly = true;
             // 
             // chkIsActive
             // 
