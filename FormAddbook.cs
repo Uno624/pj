@@ -15,6 +15,7 @@ namespace pj
         public FormAddbook()
         {
             InitializeComponent();
+            RefreshBookList();
         }
 
         private void RefreshBookList()
@@ -48,6 +49,26 @@ namespace pj
             AppData.Library.AddBook(title);
             txtNewTitle.Clear();
             RefreshBookList();
+        }
+
+        private void btb_removebook_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(txtNewTitle.Text, out int id))
+            {
+                MessageBox.Show("กรุณาเลือกจากIDหนังสือก่อน", "ผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (AppData.Library.RemoveBook(id, out string message))
+            {
+                MessageBox.Show(message, "ลบหนังสือ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtNewTitle.Clear();
+                RefreshBookList();
+            }
+            else
+            {
+                MessageBox.Show(message, "ผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

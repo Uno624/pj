@@ -287,7 +287,6 @@ public class MemberManager
 
     /// <summary>
     /// ลบสมาชิกออกจากระบบโดยตรง
-    /// *** หมายเหตุ: ถ้าจะให้ปลอดภัย ควรเช็คด้วยว่ามีหนังสือค้างยืมหรือไม่ ***
     /// </summary>
     public bool DeleteMember(int id, out string message)
     {

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Text.Json;
-using System.IO;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace pj
 {
@@ -69,6 +70,12 @@ namespace pj
 
             Save();
         }
+
+        public Book? GetBookId(int id) {
+
+            return Books.FirstOrDefault(b => b.Id == id);
+        }
+
 
         public List<Book> GetAllBooks()
         {
@@ -139,6 +146,27 @@ namespace pj
             book.ReturnDate = null;
 
             Save();
+            return true;
+        }
+        public bool RemoveBook(int id, out string message)
+        {
+            var book = GetBookId(id);
+            if (book == null)
+            {
+                message = "ไม่พบหนังสือ";
+                return false;
+            }
+
+            if (book.IsBorrowed)
+            {
+                message = "ไม่สามารถลบหนังสือได้ เพราะยังถูกยืมอยู่";
+                return false;
+            }
+
+            Books.Remove(book);
+            Save();
+
+            message = "ลบสมาชิกเรียบร้อย";
             return true;
         }
     }

@@ -31,6 +31,7 @@
             txtNewTitle = new TextBox();
             lstBooks = new ListBox();
             btb_Addbook = new Button();
+            btb_removebook = new Button();
             SuspendLayout();
             // 
             // txtNewTitle
@@ -51,7 +52,7 @@
             // 
             // btb_Addbook
             // 
-            btb_Addbook.Location = new Point(297, 360);
+            btb_Addbook.Location = new Point(125, 360);
             btb_Addbook.Name = "btb_Addbook";
             btb_Addbook.Size = new Size(203, 78);
             btb_Addbook.TabIndex = 7;
@@ -59,11 +60,22 @@
             btb_Addbook.UseVisualStyleBackColor = true;
             btb_Addbook.Click += btb_Addbook_Click;
             // 
+            // btb_removebook
+            // 
+            btb_removebook.Location = new Point(480, 360);
+            btb_removebook.Name = "btb_removebook";
+            btb_removebook.Size = new Size(203, 78);
+            btb_removebook.TabIndex = 8;
+            btb_removebook.Text = " ลบหนังสือ";
+            btb_removebook.UseVisualStyleBackColor = true;
+            btb_removebook.Click += btb_removebook_Click;
+            // 
             // FormAddbook
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btb_removebook);
             Controls.Add(btb_Addbook);
             Controls.Add(txtNewTitle);
             Controls.Add(lstBooks);
@@ -79,5 +91,6 @@
         private TextBox txtNewTitle;
         private ListBox lstBooks;
         private Button btb_Addbook;
+        private Button btb_removebook;
     }
 }
