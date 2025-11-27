@@ -73,7 +73,7 @@
             btnBorrowBook.Name = "btnBorrowBook";
             btnBorrowBook.Size = new Size(75, 23);
             btnBorrowBook.TabIndex = 4;
-            btnBorrowBook.Text = "button1";
+            btnBorrowBook.Text = "ยืม";
             btnBorrowBook.UseVisualStyleBackColor = true;
             btnBorrowBook.Click += btnBorrowBook_Click;
             // 

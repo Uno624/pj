@@ -9,6 +9,7 @@ namespace pj
     internal class AppData
     {
         public static Library Library { get; } = new Library();
+        public static MemberManager MemberManager { get; } = new MemberManager();
 
         static AppData()
         {

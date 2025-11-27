@@ -20,6 +20,14 @@
             base.Dispose(disposing);
         }
 
+        private void btnMember_Click(object sender, EventArgs e)
+        {
+            using (var f = new chkIsActive())
+            {
+                f.ShowDialog();
+            }
+        }
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -33,11 +41,12 @@
             lstBooks = new ListBox();
             btb_Addbook = new Button();
             txtNewTitle = new TextBox();
+            btb_MemberManager = new Button();
             SuspendLayout();
             // 
             // btb_Return
             // 
-            btb_Return.Location = new Point(308, 66);
+            btb_Return.Location = new Point(565, 286);
             btb_Return.Name = "btb_Return";
             btb_Return.Size = new Size(203, 78);
             btb_Return.TabIndex = 0;
@@ -47,7 +56,7 @@
             // 
             // btb_Borrowe
             // 
-            btb_Borrowe.Location = new Point(308, 178);
+            btb_Borrowe.Location = new Point(308, 286);
             btb_Borrowe.Name = "btb_Borrowe";
             btb_Borrowe.Size = new Size(203, 78);
             btb_Borrowe.TabIndex = 1;
@@ -61,12 +70,12 @@
             lstBooks.ItemHeight = 15;
             lstBooks.Location = new Point(12, 12);
             lstBooks.Name = "lstBooks";
-            lstBooks.Size = new Size(120, 94);
+            lstBooks.Size = new Size(776, 94);
             lstBooks.TabIndex = 2;
             // 
             // btb_Addbook
             // 
-            btb_Addbook.Location = new Point(308, 284);
+            btb_Addbook.Location = new Point(64, 286);
             btb_Addbook.Name = "btb_Addbook";
             btb_Addbook.Size = new Size(203, 78);
             btb_Addbook.TabIndex = 3;
@@ -78,14 +87,25 @@
             // 
             txtNewTitle.Location = new Point(12, 121);
             txtNewTitle.Name = "txtNewTitle";
-            txtNewTitle.Size = new Size(120, 23);
+            txtNewTitle.Size = new Size(377, 23);
             txtNewTitle.TabIndex = 4;
+            // 
+            // btb_MemberManager
+            // 
+            btb_MemberManager.Location = new Point(64, 170);
+            btb_MemberManager.Name = "btb_MemberManager";
+            btb_MemberManager.Size = new Size(203, 78);
+            btb_MemberManager.TabIndex = 5;
+            btb_MemberManager.Text = "จัดการสมาชิก";
+            btb_MemberManager.UseVisualStyleBackColor = true;
+            btb_MemberManager.Click += btb_MemberManager_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btb_MemberManager);
             Controls.Add(txtNewTitle);
             Controls.Add(btb_Addbook);
             Controls.Add(lstBooks);
@@ -105,5 +125,8 @@
         private ListBox lstBooks;
         private Button btb_Addbook;
         private TextBox txtNewTitle;
+        private Button btb_MemberManager;
     }
+
+
 }

@@ -59,13 +59,21 @@
             string title = txtNewTitle.Text.Trim();
             if (string.IsNullOrWhiteSpace(title))
             {
-                MessageBox.Show("กรุณากรอกชื่อหนังสือ");
+                MessageBox.Show("กรุณาใส่ชื่อหนังสือ");
                 return;
             }
 
             AppData.Library.AddBook(title);
             txtNewTitle.Clear();
             RefreshBookList();
+        }
+
+        private void btb_MemberManager_Click(object sender, EventArgs e)
+        {
+            using (var f = new chkIsActive())
+            {
+                f.ShowDialog();
+            }
         }
     }
 }
