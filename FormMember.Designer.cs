@@ -55,6 +55,7 @@
             btnDelete = new Button();
             btnSearch = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            btnShowAll = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvMembers).BeginInit();
             SuspendLayout();
             // 
@@ -196,7 +197,7 @@
             // 
             // txtSearch1
             // 
-            txtSearch1.Location = new Point(152, 325);
+            txtSearch1.Location = new Point(591, 169);
             txtSearch1.Name = "txtSearch1";
             txtSearch1.Size = new Size(100, 23);
             txtSearch1.TabIndex = 12;
@@ -204,7 +205,7 @@
             // txtSearch
             // 
             txtSearch.AutoSize = true;
-            txtSearch.Location = new Point(12, 333);
+            txtSearch.Location = new Point(543, 172);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(33, 15);
             txtSearch.TabIndex = 13;
@@ -262,7 +263,7 @@
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(503, 415);
+            btnSearch.Location = new Point(713, 168);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(75, 23);
             btnSearch.TabIndex = 19;
@@ -270,11 +271,22 @@
             btnSearch.UseVisualStyleBackColor = true;
             btnSearch.Click += btnSearch_Click;
             // 
+            // btnShowAll
+            // 
+            btnShowAll.Location = new Point(713, 208);
+            btnShowAll.Name = "btnShowAll";
+            btnShowAll.Size = new Size(75, 23);
+            btnShowAll.TabIndex = 20;
+            btnShowAll.Text = "รีเซ็ต";
+            btnShowAll.UseVisualStyleBackColor = true;
+            btnShowAll.Click += btnShowAll_Click;
+            // 
             // chkIsActive
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnShowAll);
             Controls.Add(btnSearch);
             Controls.Add(btnDelete);
             Controls.Add(btnDeactivate);
@@ -332,5 +344,6 @@
         private DataGridViewTextBoxColumn colRegisterDate;
         private DataGridViewTextBoxColumn colIsActive;
         private DataGridViewTextBoxColumn colPhone;
+        private Button btnShowAll;
     }
 }

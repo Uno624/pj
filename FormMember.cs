@@ -159,17 +159,20 @@ namespace pj
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string keyword = txtSearch.Text;
-            if (keyword == "") { MessageBox.Show ("กรุณาใส่ชื่อในคำค้นหา"); }
-            else {
-                var result = AppData.MemberManager.SearchMembers(keyword);
-                LoadMemberList(result);
-            }
+            string keyword = txtSearch1.Text;
+            var result = AppData.MemberManager.SearchMembers(keyword);
+            LoadMemberList(result);
         }
 
         private void dgvMembers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnShowAll_Click(object sender, EventArgs e)
+        {
+            txtSearch1.Clear();
+            LoadMemberList(AppData.MemberManager.Members);
         }
     }
 }
